@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Initialize video capture
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("drone pov.mp4")
 
 # Parameters for Lucas-Kanade optical flow
 lk_params = dict(winSize=(15, 15), maxLevel=2,
@@ -17,7 +17,7 @@ old_gray = cv2.cvtColor(old_frame, cv2.COLOR_BGR2GRAY)
 p0 = cv2.goodFeaturesToTrack(old_gray, mask=None, **feature_params)
 
 # Real-world scale and frame rate (adjust based on calibration)
-scale_factor = 0.02  # meters per pixel
+scale_factor = 2  # meters per pixel
 frame_rate = 30  # FPS
 
 # Variables to store captured frame information
