@@ -68,7 +68,7 @@ class Drift():
     
     def compute(self):
 
-        cap = cv2.VideoCapture(1)
+        cap = cv2.VideoCapture("WIN_20250207_17_44_19_Pro.mp4")
         ret, old_frame = self.getFrames(cap)
         old_gray = cv2.cvtColor(old_frame, cv2.COLOR_BGR2GRAY)  
         p0 = cv2.goodFeaturesToTrack(old_gray, mask=None, **self.feature_params)
@@ -145,7 +145,7 @@ class Drift():
 
             old_gray = frame_gray.copy()
 
-            key = cv2.waitKey(1) & 0xFF
+            key = cv2.waitKey(100) & 0xFF
             if key == ord('q'):
                 cap.release()
                 cv2.destroyAllWindows()
