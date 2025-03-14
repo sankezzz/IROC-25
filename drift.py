@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Initialize video capture
-cap = cv2.VideoCapture("drone pov.mp4")
+cap = cv2.VideoCapture(0)
 
 # Parameters for ShiTomasi corner detection
 feature_params = dict(maxCorners=100, qualityLevel=0.3, minDistance=7, blockSize=7)
